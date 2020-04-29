@@ -1,0 +1,595 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 720,
+	"windowMaxHeight": 32000,
+	"width": 920,
+	"height": 720,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 880,
+					"height": 680,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"CheckBoxTrace": {
+					"type": "checkbox",
+					"top": 674,
+					"left": 29,
+					"width": 80,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "btnTrace",
+					"text": "Trace",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information1": {
+					"type": "input",
+					"top": 180,
+					"left": 70,
+					"width": 810,
+					"height": 250,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Page2Title": {
+					"type": "input",
+					"top": 120,
+					"left": 70,
+					"width": 810,
+					"height": 140,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Invoices": {
+					"type": "listbox",
+					"top": 310,
+					"left": 70,
+					"width": 465,
+					"height": 201,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"sortable": false,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"staticColumnCount": 3,
+					"lockedColumnCount": 2,
+					"dataSource": "Form:C1466.invoices",
+					"scrollbarHorizontal": "automatic",
+					"columns": [
+						{
+							"name": "Column2",
+							"dataSource": "This:C1470.client.name",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"header": {
+								"name": "Header2",
+								"text": "Client"
+							},
+							"footer": {
+								"name": "Footer2",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column3",
+							"dataSource": "This:C1470.total",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"verticalAlign": "middle",
+							"header": {
+								"name": "Header3",
+								"text": "Total"
+							},
+							"footer": {
+								"name": "Footer3",
+								"timeFormat": "hh_mm_ss"
+							},
+							"textAlign": "center"
+						},
+						{
+							"name": "Column5",
+							"dataSource": "This:C1470.payment",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "Header5",
+								"text": "Payment method",
+								"stroke": "#000000"
+							},
+							"footer": {
+								"name": "Footer5",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"top": 520,
+					"left": 470,
+					"width": 200,
+					"height": 20,
+					"dataSource": "_payment",
+					"focusable": false,
+					"method": "ObjectMethods/Popup Dropdown List.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text": {
+					"type": "text",
+					"top": 520,
+					"left": 40,
+					"width": 400,
+					"height": 20,
+					"textAlign": "right",
+					"text": "Choose a payment method to select corresponding invoices"
+				},
+				"NewCommand": {
+					"type": "input",
+					"top": 590,
+					"left": 70,
+					"width": 650,
+					"height": 70,
+					"visibility": "hidden",
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"EncryptDataTitle2": {
+					"type": "input",
+					"top": 1102,
+					"left": 164,
+					"width": 332,
+					"height": 113,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"LBSelectRows2": {
+					"type": "input",
+					"top": 491,
+					"left": 550,
+					"width": 300,
+					"height": 20,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"EC1_text2": {
+					"type": "text",
+					"top": 290,
+					"left": 70,
+					"width": 300,
+					"height": 20,
+					"fontWeight": "bold",
+					"text": "Invoices (entity selection)"
+				},
+				"LBSelectRows1": {
+					"type": "input",
+					"top": 520,
+					"left": 680,
+					"width": 150,
+					"height": 20,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{6}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Page2Title1": {
+					"type": "input",
+					"top": 60,
+					"left": 70,
+					"width": 810,
+					"height": 80,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"EC1_text1": {
+					"type": "text",
+					"top": 150,
+					"left": 70,
+					"width": 300,
+					"height": 20,
+					"fontWeight": "bold",
+					"text": "Payment means (collection)"
+				},
+				"ViewCash1": {
+					"type": "button",
+					"top": 530,
+					"left": 360,
+					"width": 250,
+					"height": 20,
+					"text": "Show payment means accepted",
+					"focusable": false,
+					"method": "ObjectMethods/ViewPaymentMeans.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Payments": {
+					"type": "listbox",
+					"top": 170,
+					"left": 70,
+					"width": 395,
+					"height": 101,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"sortable": false,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"staticColumnCount": 3,
+					"lockedColumnCount": 2,
+					"dataSource": "Form:C1466.payments",
+					"scrollbarHorizontal": "automatic",
+					"columns": [
+						{
+							"name": "Column1",
+							"dataSource": "This:C1470.means",
+							"width": 140,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"header": {
+								"name": "Header1",
+								"text": "Payment means"
+							},
+							"footer": {
+								"name": "Footer1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column4",
+							"dataSource": "This:C1470.min",
+							"width": 120,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"verticalAlign": "middle",
+							"header": {
+								"name": "Header4",
+								"text": "Min amount"
+							},
+							"footer": {
+								"name": "Footer4",
+								"timeFormat": "hh_mm_ss"
+							},
+							"textAlign": "center"
+						},
+						{
+							"name": "Column6",
+							"dataSource": "This:C1470.max",
+							"width": 120,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "Header6",
+								"text": "Max amount",
+								"stroke": "#000000"
+							},
+							"footer": {
+								"name": "Footer6",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"ResetSelection1": {
+					"type": "button",
+					"top": 530,
+					"left": 650,
+					"width": 120,
+					"height": 20,
+					"text": "Reset selection",
+					"focusable": false,
+					"method": "ObjectMethods/ResetSelection1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text1": {
+					"type": "text",
+					"top": 530,
+					"left": 50,
+					"width": 150,
+					"height": 20,
+					"textAlign": "right",
+					"text": "Payment amount:"
+				},
+				"SelectRowsCollection": {
+					"type": "input",
+					"top": 590,
+					"left": 70,
+					"width": 700,
+					"height": 80,
+					"visibility": "hidden",
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"EncryptDataTitle1": {
+					"type": "input",
+					"top": 1082,
+					"left": 164,
+					"width": 332,
+					"height": 113,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"UnselectRowsCollection": {
+					"type": "input",
+					"top": 590,
+					"left": 70,
+					"width": 650,
+					"height": 30,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{4}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"LBSelectRows5": {
+					"type": "input",
+					"top": 140,
+					"left": 500,
+					"width": 380,
+					"height": 340,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{5}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable": {
+					"type": "input",
+					"top": 530,
+					"left": 240,
+					"width": 90,
+					"height": 20,
+					"dataSource": "Form:C1466.amount",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"LBSelectRows6": {
+					"type": "input",
+					"top": 560,
+					"left": 240,
+					"width": 150,
+					"height": 20,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{7}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"LBSelectRows3": {
+					"type": "input",
+					"top": 280,
+					"left": 70,
+					"width": 150,
+					"height": 20,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{8}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"LBSelectRows4": {
+					"type": "input",
+					"top": 490,
+					"left": 500,
+					"width": 150,
+					"height": 20,
+					"sizingX": "grow",
+					"dataSource": "_TabLineCode{9}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [],
+					"textAlign": "left"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
