@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
-<base name="" uuid="2D4F6103DC084198BFC0283C03D0A0B2" collation_locale="en">
+<base name="HDI_ListBoxSelectRows" uuid="2D4F6103DC084198BFC0283C03D0A0B2" collation_locale="en">
 	<schema name="DEFAULT_SCHEMA"/>
 	<table name="INFOS" uuid="107A367EBCC346259FD971E8FC1097DA" id="1">
 		<field name="ID" uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" type="4" unique="true" autosequence="true" not_null="true" id="1">
@@ -84,7 +84,7 @@
 			<table_ref uuid="107A367EBCC346259FD971E8FC1097DA" name="INFOS"/>
 		</field_ref>
 	</index>
-	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="HDI_ListBoxSelectRows" structure_file_name="HowDoI" data_file_path=":HowDoI.4DD">
+	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0" package_name="HDI_ListBoxSelectRows" structure_file_name="HowDoI" data_file_path=":HowDoI.4DD">
 		<journal_file journal_file_enabled="false"/>
 	</base_extra>
 </base>
